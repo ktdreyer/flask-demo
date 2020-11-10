@@ -1,0 +1,15 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: "flask-demo"
+spec:
+  runPolicy: "Serial"
+  source: 
+    git:
+      uri: "https://github.com/ktdreyer/flask-demo"
+  strategy: 
+    type: Docker
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "flask-demo:latest"
