@@ -1,0 +1,7 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    application: flask-demo
+  name: flask-demo
+  namespace: flask-demo
