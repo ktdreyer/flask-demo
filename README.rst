@@ -45,7 +45,8 @@ The build should complete in 1.5 minutes.
 Deploying the application
 -------------------------
 
-Create the `DeploymentConfig<https://docs.openshift.com/container-platform/4.6/applications/deployments/what-deployments-are.html>`_::
+Create the `DeploymentConfig
+<https://docs.openshift.com/container-platform/4.6/applications/deployments/what-deployments-are.html>`_::
 
     oc create -f deploymentconfig.yml
 
