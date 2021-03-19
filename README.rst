@@ -3,7 +3,7 @@ Testing running Flask apps in OpenShift
 Prerequsites
 ============
 
-Set up Code Ready Containers (I'm using 1.18.0). Follow the instructions for
+Set up Code Ready Containers (I'm using 1.23.1). Follow the instructions for
 "Setting up CodeReady Containers on a remote server" (basically: firewall,
 HAProxy, dnsmasq wildcard)
 
@@ -22,11 +22,11 @@ And create a new project::
 Create the BuildConfig and ImageStream
 --------------------------------------
 
-This tells OpenShift `how to build the container image <https://docs.openshift.com/container-platform/4.6/builds/understanding-buildconfigs.html>`_::
+This tells OpenShift `how to build the container image <https://docs.openshift.com/container-platform/4.7/cicd/builds/understanding-buildconfigs.html>`_::
 
     oc create -f buildconfig.yml
 
-This tells OpenShift `how to store the image <https://docs.openshift.com/container-platform/4.6/openshift_images/images-understand.html#images-imagestream-use_images-understand>`_ that we're going to build::
+This tells OpenShift `how to store the image <https://docs.openshift.com/container-platform/4.7/openshift_images/images-understand.html#images-imagestream-use_images-understand>`_ that we're going to build::
 
     oc create -f imagestream.yml
 
@@ -34,7 +34,7 @@ Build the image
 ---------------
 
 Start the first `build
-<https://docs.openshift.com/container-platform/4.6/builds/basic-build-operations.html>`_
+<https://docs.openshift.com/container-platform/4.7/cicd/builds/basic-build-operations.html>`_
 for this image::
 
     oc start-build flask-demo --follow
@@ -58,7 +58,7 @@ Deploying the application
 -------------------------
 
 Create the `DeploymentConfig
-<https://docs.openshift.com/container-platform/4.6/applications/deployments/what-deployments-are.html>`_::
+<https://docs.openshift.com/container-platform/4.7/applications/deployments/what-deployments-are.html>`_::
 
     oc create -f deploymentconfig.yml
 
