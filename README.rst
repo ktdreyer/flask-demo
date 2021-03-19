@@ -112,3 +112,12 @@ Note the "termination" field indicates that this supports HTTPS. A blank
 Now we can load the Flask application::
 
     curl -k -v https://flask-demo-flask-demo.apps-crc.testing/
+
+To view the Flask app logs (Flask writes to STDOUT)::
+
+    oc logs flask-demo-1-wr94z
+     * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+     * Restarting with stat
+     * Debugger is active!
+     * Debugger PIN: 306-896-608
+    10.217.0.1 - - [19/Mar/2021 22:56:30] "GET / HTTP/1.1" 200 -
