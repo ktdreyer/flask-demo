@@ -112,8 +112,3 @@ Note the "termination" field indicates that this supports HTTPS. A blank
 Now we can load the Flask application::
 
     curl -k -v https://flask-demo-flask-demo.apps-crc.testing/
-
-This will work for HTTPS. Plaintext HTTP will work on the local CRC server,
-but we need `a small change to the HAProxy settings
-<https://github.com/code-ready/crc/pull/1662>`_ to make HTTP work for clients
-on the LAN.
