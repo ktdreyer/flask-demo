@@ -7,6 +7,18 @@ Set up Code Ready Containers (I'm using 1.18.0). Follow the instructions for
 "Setting up CodeReady Containers on a remote server" (basically: firewall,
 HAProxy, dnsmasq wildcard)
 
+Create the New Project
+----------------------
+
+After CRC starts, follow the instructions to log in as a developer::
+
+  eval $(crc oc-env)
+  oc login -u developer https://api.crc.testing:6443
+
+And create a new project::
+
+  oc new-project flask-demo
+
 Create the BuildConfig and ImageStream
 --------------------------------------
 
