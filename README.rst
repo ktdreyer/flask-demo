@@ -121,3 +121,32 @@ To view the Flask app logs (Flask writes to STDOUT)::
      * Debugger is active!
      * Debugger PIN: 306-896-608
     10.217.0.1 - - [19/Mar/2021 22:56:30] "GET / HTTP/1.1" 200 -
+
+Storage
+-------
+
+CRC comes with 30 pre-defined persistent volumes. To examine these, log in as
+the cluster administrator::
+
+    oc login -u kubeadmin
+    Authentication required for https://api.crc.testing:6443 (openshift)
+    Username: kubeadmin
+    Password:
+    Login successful.
+
+To list all 30 volumes::
+
+    oc get pv
+
+To look at the details of one volume::
+
+    oc describe pv pv0002
+    ...
+    Source:
+      Type:          HostPath (bare host directory volume)
+      Path:          /mnt/pv-data/pv0002
+
+Switch back to the developer account when you're done::
+
+    eval $(crc oc-env)
+    oc login -u developer https://api.crc.testing:6443
